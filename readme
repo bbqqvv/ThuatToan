@@ -1,0 +1,161 @@
+Tuyệt vời! Mình sẽ gửi bạn **2 phần**:
+
+---
+
+## 🔶 PHẦN 1: **Bộ bài tập thực hành đầy đủ** (chia theo nhóm phương thức của Stream API)
+
+---
+
+### 🔹 **1. Bài tập tạo Stream**
+
+**Bài 1:** Tạo `Stream<String>` từ danh sách `"An", "Bình", "Cường"` và in ra từng tên.
+
+**Bài 2:** Tạo stream từ mảng `int[] arr = {1, 2, 3, 4, 5}` và in bình phương của từng phần tử.
+
+---
+
+### 🔹 **2. Bài tập `filter()` – lọc điều kiện**
+
+**Bài 3:** Từ danh sách số nguyên `1 → 10`, in ra số chẵn.
+
+**Bài 4:** Lọc ra các chuỗi có độ dài lớn hơn 3 từ danh sách `["A", "AB", "ABC", "ABCD"]`.
+
+---
+
+### 🔹 **3. Bài tập `map()` – biến đổi phần tử**
+
+**Bài 5:** Chuyển danh sách tên thành **chữ in hoa**.
+
+**Bài 6:** Tăng mỗi số trong danh sách `1 → 5` lên 10 đơn vị.
+
+---
+
+### 🔹 **4. Bài tập `sorted()`**
+
+**Bài 7:** Sắp xếp danh sách `["Cường", "An", "Bình"]` theo thứ tự bảng chữ cái.
+
+**Bài 8:** Sắp xếp danh sách số theo thứ tự giảm dần.
+
+---
+
+### 🔹 **5. Bài tập `collect()` – gom lại**
+
+**Bài 9:** Gom các tên bắt đầu bằng "B" thành một danh sách mới.
+
+**Bài 10:** Ghép các chuỗi thành 1 chuỗi duy nhất, phân cách bằng `-`.
+
+> Ví dụ: `"An-Bình-Cường"`
+
+---
+
+### 🔹 **6. Bài tập `findFirst`, `anyMatch`, `noneMatch`**
+
+**Bài 11:** Kiểm tra danh sách có phần tử `"An"` hay không?
+
+**Bài 12:** Tìm phần tử đầu tiên có độ dài lớn hơn 3 trong danh sách tên.
+
+---
+
+### 🔹 **7. Bài tập `reduce()` – gộp thành 1 giá trị**
+
+**Bài 13:** Tính tổng các số từ 1 đến 5 bằng Stream.
+
+**Bài 14:** Gộp chuỗi từ `["A", "B", "C"]` thành `"ABC"`.
+
+---
+
+### 🔹 **8. Bài tập nâng cao – kết hợp nhiều thao tác**
+
+**Bài 15:**
+Từ danh sách số nguyên `List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6);`
+
+* Lọc ra số chẵn
+* Nhân đôi giá trị
+* Lấy 2 số đầu tiên
+* Thu lại thành danh sách mới
+
+---
+
+## 🔷 PHẦN 2: **Chuyển đổi for/while ➤ Stream API**
+
+---
+
+### 🔁 Ví dụ 1: Lọc phần tử
+
+#### ⛔ Cách dùng for:
+
+```java
+List<String> result = new ArrayList<>();
+for (String name : names) {
+    if (name.startsWith("A")) {
+        result.add(name);
+    }
+}
+```
+
+#### ✅ Dùng Stream:
+
+```java
+List<String> result = names.stream()
+                           .filter(name -> name.startsWith("A"))
+                           .collect(Collectors.toList());
+```
+
+---
+
+### 🔁 Ví dụ 2: Biến đổi danh sách
+
+#### ⛔ For:
+
+```java
+List<String> upper = new ArrayList<>();
+for (String name : names) {
+    upper.add(name.toUpperCase());
+}
+```
+
+#### ✅ Stream:
+
+```java
+List<String> upper = names.stream()
+                          .map(String::toUpperCase)
+                          .collect(Collectors.toList());
+```
+
+---
+
+### 🔁 Ví dụ 3: Tính tổng
+
+#### ⛔ Dùng for:
+
+```java
+int sum = 0;
+for (int i : numbers) {
+    sum += i;
+}
+```
+
+#### ✅ Stream:
+
+```java
+int sum = numbers.stream()
+                 .mapToInt(Integer::intValue)
+                 .sum();
+```
+
+Hoặc dùng `reduce()`:
+
+```java
+int sum = numbers.stream()
+                 .reduce(0, Integer::sum);
+```
+
+---
+
+Bạn muốn mình:
+
+* ✅ Viết sẵn **đáp án mẫu cho từng bài tập trên**?
+* ✅ Làm thành **PDF / file tổng hợp có thể in ra**?
+* ✅ Tạo ra **bộ bài tập có test case hoặc giải thích logic từng bước**?
+
+Bạn chọn mục nào, mình làm ngay 👇
